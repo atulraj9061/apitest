@@ -1,9 +1,26 @@
 import React from 'react';
-import { render } from '@testing-library/react';
-import App from './App';
+import Movies from './Movies';
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+it("Api testing", async function () {
+  const response = new Movies ();
+  var data = await response.api(); 
+  expect(data.movies[0].id).toEqual("1")
+
+}
+)
+
+it("Api testing", async function () {
+  const response = new Movies ();
+  var data = await response.api(); 
+  expect(data.movies[0].title).toEqual("Star Wars")
+
+}
+)
+
+it("Api testing", async function () {
+  const response = new Movies ();
+  var data = await response.api(); 
+  expect(data.movies[0].releaseYear).toEqual("1977")
+
+}
+)
